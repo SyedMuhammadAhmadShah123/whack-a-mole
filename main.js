@@ -6,7 +6,7 @@ const levelEl = document.querySelector('.level span')
 let score = 0
 let level = "Easy"
 
-const sound = new Audio("assets/smash.mp3")
+const sound = new Audio("assets/smash_1.mp3")
 
 function run(){
     const i = Math.floor(Math.random() * holes.length)
@@ -20,7 +20,7 @@ function run(){
     img.addEventListener('click', () => {
         // increment in score and sound 
         score += 10
-        // sound.play()
+        sound.play()
         scoreEl.textContent = score
         levelEl.textContent = level
         img.src = 'assets/mole-whacked.png'
