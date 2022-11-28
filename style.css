@@ -70,12 +70,12 @@ body{
     left: 100px;
     background-image: url('assets/hammer.png');
     background-size: 100% 100%;
-    transform: translate(-20%, -20%);
+    transform: translate(-80%, -20%);
     transition: transform .1s;
     pointer-events: none;
 }
 .cursor.active{
-    transform: translate(-20%, -20%) rotate(-45deg);
+    transform: translate(-80%, -20%) rotate(45deg);
 }
 .footer{
     /* border: 2px solid red; */

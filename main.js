@@ -3,12 +3,12 @@ const startTimer=(duration, display)=> {
         let counter = seconds;
           
         const interval = setInterval(() => {
-          console.log(counter);
+        //   console.log(counter);
           counter--;
           display.textContent =  counter; 
           if (counter < 0 ) {
             clearInterval(interval);
-            console.log('Ding!');
+            // console.log('Ding!');
             alert("Game Over! \nYour score is " + score)
             window.location.reload(true); 
           }
@@ -17,14 +17,14 @@ const startTimer=(duration, display)=> {
       startCountdown(duration)
 }
 
-window.onload = ()=> {
+window.onload = () => {
     let durationInSeconds = 60 
-        display = document.querySelector('#time');
+    let display = document.querySelector('#time');
     startTimer(durationInSeconds, display);
 };
         
 
-const cursor = document.querySelector('.cursor')
+const cursor1 = document.querySelector('.cursor')
 // selecting all holes and storing it in array using spread operator
 const holes = [...document.querySelectorAll('.hole')]
 const scoreEl = document.querySelector('.score span')
@@ -85,7 +85,7 @@ const run=()=>{
         }, 1000)
         level = "Hard"
     }
-    // so our mole keep appearing even after score of 150 
+    // so our mole keep appearing even after score set for hard level 
     else{
         timer = setTimeout(() => {
             hole.removeChild(img)
@@ -97,14 +97,14 @@ const run=()=>{
 run()
 
 window.addEventListener('mousemove', e => {
-    cursor.style.top = e.pageY + 'px'
-    cursor.style.left = e.pageX + 'px'
+    cursor1.style.top = e.pageY + 'px'
+    cursor1.style.left = e.pageX + 'px'
 })
 window.addEventListener('mousedown', () => {
-    cursor.classList.add('active')
+    cursor1.classList.add('active')
 })
 window.addEventListener('mouseup', () => {
-    cursor.classList.remove('active')
+    cursor1.classList.remove('active')
 })
 
 
