@@ -84,6 +84,7 @@ body{
     align-items: center;
     gap: 2em;
     margin-top: 1em;
+    flex-wrap: wrap;
     /* color: #ccc; */
 }
 .score{
