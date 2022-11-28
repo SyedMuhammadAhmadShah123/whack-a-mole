@@ -1,3 +1,29 @@
+const startTimer=(duration, display)=> {
+    function startCountdown(seconds) {
+        let counter = seconds;
+          
+        const interval = setInterval(() => {
+          console.log(counter);
+          counter--;
+          display.textContent =  counter; 
+          if (counter < 0 ) {
+            clearInterval(interval);
+            console.log('Ding!');
+            alert("Game Over! \nYour score is " + score)
+            window.location.reload(true); 
+          }
+        }, 1000);
+      }
+      startCountdown(duration)
+}
+
+window.onload = ()=> {
+    let durationInSeconds = 60 
+        display = document.querySelector('#time');
+    startTimer(durationInSeconds, display);
+};
+        
+
 const cursor = document.querySelector('.cursor')
 // selecting all holes and storing it in array using spread operator
 const holes = [...document.querySelectorAll('.hole')]
@@ -8,7 +34,7 @@ let level = "Easy"
 
 const sound = new Audio("assets/smash_1.mp3")
 
-function run(){
+const run=()=>{
     const i = Math.floor(Math.random() * holes.length)
     const hole = holes[i]
     let timer = null
@@ -36,14 +62,14 @@ function run(){
 
         // setting speed
         // Easy level 
-    if(score < 10){
+    if(score < 50 ){
         timer = setTimeout(() => {
             hole.removeChild(img)
             run()
         }, 1500)
     }
         // Medium level 
-    else if(score < 20){
+    else if(score < 70){
         timer = setTimeout(() => {
             hole.removeChild(img)
             run()
@@ -52,7 +78,7 @@ function run(){
         level = "Medium"
     }
         // Hard level 
-    else if(score <= 30){
+    else if(score <= 130){
         timer = setTimeout(() => {
             hole.removeChild(img)
             run()
@@ -80,3 +106,5 @@ window.addEventListener('mousedown', () => {
 window.addEventListener('mouseup', () => {
     cursor.classList.remove('active')
 })
+
+
