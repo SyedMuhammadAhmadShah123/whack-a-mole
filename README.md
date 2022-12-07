@@ -3,5 +3,5 @@
 
 
 ### [Play Online](https://whack-a-mole-1.netlify.app//)
+### [![game preview](/assets/preview.png)](https://whack-a-mole-1.netlify.app//)
 
-![game preview](assets/preview.png)
